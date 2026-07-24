@@ -1,0 +1,94 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.hero {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+			.profile-img {
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				object-fit: cover;
+				margin-bottom: 1rem;
+				border: 4px solid var(--accent);
+				box-shadow: var(--box-shadow);
+			}
+			.hero h1 {
+				margin-bottom: 0.5rem;
+			}
+			.hero h3 {
+				color: var(--gray);
+				font-weight: 400;
+				margin-top: 0;
+			}
+			.skills {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				justify-content: center;
+				margin: 1.5rem 0;
+			}
+			.skill-badge {
+				background-color: var(--accent);
+				color: white;
+				padding: 0.2rem 0.8rem;
+				border-radius: 20px;
+				font-size: 0.9rem;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero">
+				<img src="/perfil-lili.jpeg" alt="Foto de perfil de Liliannis" class="profile-img" />
+				<h1>👋 ¡Hola! Soy Liliannis (Lili)</h1>
+				<h3>QA Analyst | QA Engineer | Software Quality Assurance</h3>
+			</section>
+
+			<p>
+				Soy Ingeniera en Ciencias Informáticas con cerca de 3 años de experiencia asegurando la calidad del software. Creo firmemente que un buen QA no solo identifica defectos, sino que ayuda a prevenirlos entendiendo a fondo el negocio y colaborando estrechamente con todo el equipo.
+			</p>
+
+			<div class="skills">
+				<span class="skill-badge">SQL</span>
+				<span class="skill-badge">APIs REST</span>
+				<span class="skill-badge">Postman</span>
+				<span class="skill-badge">Playwright</span>
+				<span class="skill-badge">TypeScript</span>
+				<span class="skill-badge">Agile Scrum</span>
+			</div>
+
+			<h3>🚀 Sobre mí</h3>
+			<ul>
+				<li><strong>Análisis Funcional:</strong> Especialista en levantamiento de requerimientos y mitigación de riesgos de software.</li>
+				<li><strong>Testing:</strong> Amplia experiencia en Pruebas Funcionales, End-to-End, Regresión y validación backend.</li>
+				<li><strong>Liderazgo:</strong> Acostumbrada a facilitar dinámicas ágiles y gestionar el ciclo de vida de los defectos (Jira, Squash TM).</li>
+				<li><strong>Evolución Continua:</strong> Actualmente expandiendo mis conocimientos en automatización con <strong>Playwright</strong> y <strong>TypeScript</strong>.</li>
+			</ul>
+
+			<p>
+				Este sitio también sirve como mi <strong>Blog</strong>, donde publico artículos sobre calidad de software, aprendizajes en automatización y reflexiones sobre metodologías ágiles.
+			</p>
+			
+			<p>
+				👉 <a href="/blog">Leé mis últimas publicaciones</a> o <a href="/about">conocé más sobre mi experiencia</a>.
+			</p>
+
+		</main>
+		<Footer />
+	</body>
+</html>
