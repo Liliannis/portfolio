@@ -5,15 +5,36 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import { SITE_URL, SITE_NAME } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+const heroImageURL = heroImage
+	? typeof heroImage === 'string'
+		? new URL(heroImage, SITE_URL).toString()
+		: new URL(heroImage.src, SITE_URL).toString()
+	: null;
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<BaseHead title={title} description={description} />
+		<!-- Article Schema -->
+		<script type="application/ld+json" set:html={{
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": title,
+			"description": description,
+			"author": {
+				"@type": "Person",
+				"name": SITE_NAME
+			},
+			"datePublished": pubDate.toISOString(),
+			...(updatedDate ? { "dateModified": updatedDate.toISOString() } : {}),
+			...(heroImageURL ? { "image": heroImageURL } : {})
+		}} />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -60,7 +81,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && <Image width={1020} height={510} src={heroImage} alt={`Imagen destacada para: ${title}`} />}
 				</div>
 				<div class="prose">
 					<div class="title">
@@ -69,7 +90,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							{
 								updatedDate && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+										Actualizado <FormattedDate date={updatedDate} />
 									</div>
 								)
 							}

@@ -51,6 +51,10 @@ const ogImageURL = new URL(OG_IMAGE, SITE_URL);
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
+<!-- Hreflang -->
+<link rel="alternate" hrefLang={SITE_LOCALE.replace('_', '-').toLowerCase()} href={canonicalURL} />
+<link rel="alternate" hrefLang="x-default" href={canonicalURL} />
+
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="description" content={description} />

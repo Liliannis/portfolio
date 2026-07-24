@@ -8,7 +8,11 @@ import { defineConfig, fontProviders } from 'astro/config';
 export default defineConfig({
 	site: 'https://liliannis.com',
 	base: '/',
-	integrations: [mdx(), sitemap()],
+	integrations: [mdx(), sitemap({
+		lastmod: new Date('2026-07-23'),
+		changefreq: 'weekly',
+		priority: 0.7,
+	})],
 	vite: {
 		server: {
 			allowedHosts: ['44d3-2800-a4-885-da00-46e5-17ff-fe9c-733b.ngrok-free.app'],
