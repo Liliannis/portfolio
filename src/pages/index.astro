@@ -2,94 +2,91 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Hero from '../components/Hero.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, LINKEDIN_URL } from '../consts';
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			.hero {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				text-align: center;
-				margin-bottom: 2rem;
-			}
-			.profile-img {
-				width: 150px;
-				height: 150px;
-				border-radius: 50%;
-				object-fit: cover;
-				margin-bottom: 1rem;
-				border: 4px solid var(--accent);
-				box-shadow: var(--box-shadow);
-			}
-			.hero h1 {
-				margin-bottom: 0.5rem;
-			}
-			.hero h2 {
-				color: var(--gray);
-				font-weight: 400;
-				margin-top: 0;
-				font-size: 1.4rem;
-			}
-			.skills {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.5rem;
-				justify-content: center;
-				margin: 1.5rem 0;
-			}
-			.skill-badge {
-				background-color: var(--accent);
-				color: white;
-				padding: 0.2rem 0.8rem;
-				border-radius: 20px;
-				font-size: 0.9rem;
-			}
-		</style>
 	</head>
 	<body>
 		<Header />
-		<main>
-			<section class="hero animate-fade-in-up">
-				<img src="/perfil-lili.jpeg" alt="Foto de perfil de Liliannis" class="profile-img" />
-				<h1>👋 ¡Hola! Soy Liliannis (Lili)</h1>
-				<h2>QA Analyst | QA Engineer | Software Quality Assurance</h2>
-			</section>
+		<main class="home">
+			<Hero />
 
 			<p class="reveal">
 				Soy Ingeniera en Ciencias Informáticas con cerca de 3 años de experiencia asegurando la calidad del software. Creo firmemente que un buen QA no solo identifica defectos, sino que ayuda a prevenirlos entendiendo a fondo el negocio y colaborando estrechamente con todo el equipo.
 			</p>
 
-			<div class="skills animate-stagger">
-				<span class="skill-badge">SQL</span>
-				<span class="skill-badge">APIs REST</span>
-				<span class="skill-badge">Postman</span>
-				<span class="skill-badge">Playwright</span>
-				<span class="skill-badge">TypeScript</span>
-				<span class="skill-badge">Agile Scrum</span>
-			</div>
-
 			<h2 class="reveal">🚀 Sobre mí</h2>
 			<ul class="reveal">
-				<li><strong>Análisis Funcional:</strong> Especialista en levantamiento de requerimientos y mitigación de riesgos de software.</li>
-				<li><strong>Testing:</strong> Amplia experiencia en Pruebas Funcionales, End-to-End, Regresión y validación backend.</li>
-				<li><strong>Liderazgo:</strong> Acostumbrada a facilitar dinámicas ágiles y gestionar el ciclo de vida de los defectos (Jira, Squash TM).</li>
-				<li><strong>Evolución Continua:</strong> Actualmente expandiendo mis conocimientos en automatización con <strong>Playwright</strong> y <strong>TypeScript</strong>.</li>
+				<li><strong>Encuentro lo que otros pasan por alto:</strong> Valido consistencia de datos con SQL directo contra base de datos y detecto inconsistencias en los requerimientos antes de que se conviertan en un defecto en producción.</li>
+				<li><strong>De manual a automatizado:</strong> Diseño y ejecuto pruebas funcionales, E2E y de regresión; hoy estoy escalando ese proceso con Playwright y TypeScript.</li>
+				<li><strong>QA que entiende el negocio, no solo el código:</strong> Facilito ceremonias ágiles, coordino equipos Scrum y traduzco entre negocio y desarrollo para que los criterios de aceptación queden claros desde el día uno.</li>
+				<li><strong>Gestiono el defecto, pero mi objetivo es el proceso:</strong> Manejo el ciclo de vida completo de bugs en Jira, con la mira puesta en reducir cuántos llegan a producción, no solo en reportarlos.</li>
 			</ul>
 
-			<p class="reveal">
-				Este sitio también sirve como mi <strong>Blog</strong>, donde publico artículos sobre calidad de software, aprendizajes en automatización y reflexiones sobre metodologías ágiles.
-			</p>
-			
-			<p class="reveal">
-				👉 <a href="/blog">Leé mis últimas publicaciones</a> o <a href="/about">conocé más sobre mi experiencia</a>.
+			<div class="cta-block reveal">
+				<p class="cta-text">
+					¿Necesitás asegurar la calidad de tu producto antes de que el usuario encuentre los bugs? Hablemos.
+				</p>
+				<a
+					class="cta-button"
+					href={LINKEDIN_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Conectemos en LinkedIn
+				</a>
+			</div>
+
+			<p class="reveal secondary-note">
+				También escribo sobre QA, automatización y metodologías ágiles en mi blog.
+				<a href="/blog">Leé mis últimas publicaciones</a> o
+				<a href="/about">conocé más sobre mi experiencia</a>.
 			</p>
 
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	main.home {
+		width: 100%;
+		max-width: 960px;
+	}
+	.cta-block {
+		text-align: center;
+		margin: 2.5rem 0;
+		padding: 2rem 1rem;
+		background: rgb(var(--gray-light));
+		border-radius: 12px;
+	}
+	.cta-text {
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: rgb(var(--black));
+		margin-bottom: 1.25rem;
+	}
+	.cta-button {
+		display: inline-block;
+		padding: 0.7rem 1.6rem;
+		border-radius: 8px;
+		font-weight: 700;
+		text-decoration: none;
+		background-color: var(--accent);
+		color: white;
+		transition: opacity 0.2s ease;
+	}
+	.cta-button:hover {
+		opacity: 0.85;
+		color: white;
+	}
+	.secondary-note {
+		font-size: 0.95rem;
+		color: rgb(var(--gray));
+	}
+</style>
