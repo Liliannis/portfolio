@@ -7,7 +7,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://liliannis.github.io',
-	base: '/portfolio',
+	base: '/',
 	integrations: [mdx(), sitemap()],
 	vite: {
 		server: {
