@@ -5,7 +5,10 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2><a href="/">
+				<span class="full-title">{SITE_TITLE}</span>
+				<span class="short-title">Lili | QA Engineer</span>
+			</a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Inicio</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -68,9 +71,13 @@ import HeaderLink from './HeaderLink.astro';
 	.social-links a {
 		display: flex;
 	}
+	.full-title { display: inline; }
+	.short-title { display: none; }
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
 		}
+		.full-title { display: none; }
+		.short-title { display: inline; }
 	}
 </style>
