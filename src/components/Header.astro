@@ -8,6 +8,7 @@ import HeaderLink from './HeaderLink.astro';
 		<h2><a href="/">
 				<span class="full-title">{SITE_TITLE}</span>
 				<span class="short-title">Lili | QA Engineer</span>
+				<span class="mini-title">Lili</span>
 			</a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Inicio</HeaderLink>
@@ -73,11 +74,18 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	.full-title { display: inline; }
 	.short-title { display: none; }
+	.mini-title { display: none; }
+
 	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
+		.social-links { display: none; }
 		.full-title { display: none; }
 		.short-title { display: inline; }
+		.mini-title { display: none; }
+	}
+
+	@media (max-width: 480px) {
+		.full-title { display: none; }
+		.short-title { display: none; }
+		.mini-title { display: inline; }
 	}
 </style>
