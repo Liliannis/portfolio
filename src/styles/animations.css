@@ -1,0 +1,165 @@
+/* =============================================
+   Animations — Liliannis Portfolio
+   ============================================= */
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* ---- Keyframes ---- */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* ---- Entrance classes ---- */
+.animate-fade-in-up {
+	opacity: 0;
+	animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+	opacity: 0;
+	animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+	opacity: 0;
+	animation: scaleIn 0.4s ease-out forwards;
+}
+
+/* Staggered delays for children */
+.animate-stagger > * {
+	opacity: 0;
+	animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-stagger > *:nth-child(1)  { animation-delay: 0.05s; }
+.animate-stagger > *:nth-child(2)  { animation-delay: 0.10s; }
+.animate-stagger > *:nth-child(3)  { animation-delay: 0.15s; }
+.animate-stagger > *:nth-child(4)  { animation-delay: 0.20s; }
+.animate-stagger > *:nth-child(5)  { animation-delay: 0.25s; }
+.animate-stagger > *:nth-child(6)  { animation-delay: 0.30s; }
+.animate-stagger > *:nth-child(7)  { animation-delay: 0.35s; }
+.animate-stagger > *:nth-child(8)  { animation-delay: 0.40s; }
+.animate-stagger > *:nth-child(9)  { animation-delay: 0.45s; }
+.animate-stagger > *:nth-child(10) { animation-delay: 0.50s; }
+
+/* ---- Hover effects ---- */
+.hover-lift {
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+	transform: translateY(-4px);
+	box-shadow:
+		0 4px 12px rgba(var(--gray), 20%),
+		0 8px 24px rgba(var(--gray), 15%);
+}
+
+.hover-underline {
+	position: relative;
+	text-decoration: none;
+}
+
+.hover-underline::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: currentColor;
+	transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+	width: 100%;
+}
+
+/* ---- Scroll reveal (via Intersection Observer) ---- */
+.reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ---- Skill badges ---- */
+.skill-badge {
+	transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-badge:hover {
+	transform: translateY(-4px) scale(1.05);
+	box-shadow:
+		0 4px 12px rgba(var(--gray), 20%),
+		0 8px 24px rgba(var(--gray), 15%);
+}
+
+/* ---- Profile image ---- */
+.profile-img {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+	transform: scale(1.03);
+}
+
+/* ---- Social link icons ---- */
+.social-links a svg,
+.social-links a {
+	transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover svg {
+	transform: translateY(-2px);
+}
+
+/* ---- Nav links ---- */
+nav a {
+	transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+/* ---- Footer ---- */
+footer {
+	transition: background 0.3s ease;
+}
+
+/* ---- Smooth scroll ---- */
+html {
+	scroll-behavior: smooth;
+}

@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
+import '../styles/animations.css';
 import {
 	SITE_TITLE,
 	SITE_DESCRIPTION,
@@ -95,6 +96,21 @@ const ogImageURL = new URL(OG_IMAGE, SITE_URL);
 	],
 	"knowsAbout": ["Software Quality Assurance", "QA Engineering", "Functional Testing", "API Testing", "Playwright", "TypeScript", "SQL"]
 }} />
+
+<!-- Scroll Reveal -->
+<script>
+;(function() {
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+	var els = document.querySelectorAll('.reveal');
+	if (!els.length) return;
+	var obs = new IntersectionObserver(function(entries) {
+		entries.forEach(function(e) {
+			if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+		});
+	}, { threshold: 0.15 });
+	els.forEach(function(el) { obs.observe(el); });
+})();
+</script>
 
 <!-- GoatCounter Analytics -->
 <script
