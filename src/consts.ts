@@ -1,7 +1,6 @@
-// Global data for the site.
-
-export const SITE_TITLE = 'Liliannis Quintana Galan | QA Engineer';
-export const SITE_DESCRIPTION = 'Portfolio y Blog de Liliannis Quintana, QA Analyst y Engineer especializada en calidad de software.';
+﻿// Global data for the site.
+export const SITE_TITLE = 'Lili QA | QA Analyst y Analista Funcional';
+export const SITE_DESCRIPTION = 'QA Analyst y Analista Funcional con experiencia en plataformas BI, sistemas corporativos, análisis de requisitos, pruebas funcionales, APIs REST y SQL.';
 export const SITE_URL = 'https://liliannis.com';
 export const SITE_LOCALE = 'es_ES';
 export const SITE_NAME = 'Liliannis Quintana';

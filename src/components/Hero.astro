@@ -1,126 +1,47 @@
----
-import { LINKEDIN_URL, GITHUB_URL } from '../consts';
+﻿---
+import { GITHUB_URL, LINKEDIN_URL } from '../consts';
 ---
 
-<section class="hero animate-fade-in-up">
-	<img src="/perfil-lili.jpeg" alt="Foto de perfil de Liliannis" class="profile-img" />
-	<p class="eyebrow">QA Engineer · Testing &amp; Automatización</p>
-	<h1>Liliannis Quintana Galán</h1>
-	<p class="subheadline">
-		Convierto requerimientos ambiguos en software confiable. Diseño y ejecuto pruebas
-		funcionales, E2E y de regresión, valido APIs con Postman y SQL, y estoy escalando ese
-		trabajo con automatización en Playwright y TypeScript.
-	</p>
-
-	<div class="skills animate-stagger">
-		<span class="skill-badge">SQL</span>
-		<span class="skill-badge">APIs REST</span>
-		<span class="skill-badge">Postman</span>
-		<span class="skill-badge">Playwright</span>
-		<span class="skill-badge">TypeScript</span>
-		<span class="skill-badge">Agile Scrum</span>
+<section id="inicio" class="hero" aria-labelledby="inicio-title">
+	<div class="hero-copy">
+		<p class="eyebrow">QA Analyst · Análisis funcional</p>
+		<h1 id="inicio-title">QA para productos confiables y alineados con el negocio.</h1>
+		<p class="hero-summary">Soy Liliannis Quintana Galán, Ingeniera en Ciencias Informáticas y QA Analyst. Realizo pruebas funcionales y validación de datos para ayudar a los equipos a entregar productos más confiables.</p>
+		<p class="hero-detail">Tengo experiencia acompañando plataformas de Business Intelligence y sistemas corporativos: desde reglas de negocio y casos de prueba hasta APIs, SQL, dashboards y seguimiento de incidencias.</p>
+		<div class="hero-actions">
+			<a class="button button-primary" href="/liliannis-quintana-galan-cv.pdf" download>Descargar CV</a>
+			<a class="button button-secondary" href="#portafolio">Ver mi trabajo</a>
+		</div>
+		<div class="hero-social" aria-label="Perfiles profesionales">
+			<a href={LINKEDIN_URL} target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">?</span></a>
+			<a href={GITHUB_URL} target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">?</span></a>
+		</div>
 	</div>
-
-	<div class="hero-ctas">
-		<a
-			class="btn btn-primary"
-			href={LINKEDIN_URL}
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			Conectemos en LinkedIn
-		</a>
-		<a
-			class="btn btn-secondary"
-			href={GITHUB_URL}
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			Ver GitHub
-		</a>
+	<div class="hero-photo-wrap">
+		<p class="location-badge" aria-label="Ubicación actual">Montevideo, Uruguay</p>
+		<img src="/perfil-lili.jpeg" alt="Liliannis Quintana Galán" class="profile-img" />
 	</div>
 </section>
 
 <style>
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		margin-bottom: 2rem;
-	}
-	.profile-img {
-		width: 150px;
-		height: 150px;
-		border-radius: 50%;
-		object-fit: cover;
-		margin-bottom: 1rem;
-		border: 4px solid var(--accent);
-		box-shadow: var(--box-shadow);
-	}
-	.eyebrow {
-		margin: 0 0 0.5rem 0;
-		color: var(--accent);
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-size: 0.9rem;
-		font-weight: 700;
-	}
-	.hero h1 {
-		margin-bottom: 0.5rem;
-	}
-	.subheadline {
-		max-width: 42rem;
-		color: rgb(var(--gray-dark));
-		font-weight: 600;
-		font-size: 1.3rem;
-		margin-top: 0;
-	}
-	.skills {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-		justify-content: center;
-		margin: 1.5rem 0;
-	}
-	.skill-badge {
-		background-color: var(--accent-dark);
-		color: white;
-		padding: 0.2rem 0.8rem;
-		border-radius: 20px;
-		font-size: 0.9rem;
-	}
-	.hero-ctas {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem;
-		justify-content: center;
-		margin-top: 0.5rem;
-	}
-	.btn {
-		display: inline-block;
-		padding: 0.7rem 1.6rem;
-		border-radius: 8px;
-		font-weight: 700;
-		text-decoration: none;
-		border: 2px solid var(--accent);
-		transition: opacity 0.2s ease;
-	}
-	.btn:hover {
-		opacity: 0.85;
-	}
-	.btn-primary {
-		background-color: var(--accent);
-		color: white;
-	}
-	.btn-primary:hover {
-		color: white;
-	}
-	.btn-secondary {
-		background-color: transparent;
-		color: var(--accent);
-	}
-	.btn-secondary:hover {
-		color: var(--accent);
-	}
+	.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.72fr); align-items: center; gap: clamp(2.5rem, 7vw, 6.5rem); padding: clamp(3rem, 8vw, 6.5rem) 0; }
+	.hero-copy { max-width: 43rem; }
+	.eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+	.hero h1 { max-width: 12ch; margin-bottom: 1.25rem; font-size: clamp(2.8rem, 6vw, 5.3rem); letter-spacing: -0.065em; }
+	.hero-summary { max-width: 39rem; margin-bottom: 1rem; color: #1E293B; font-size: clamp(1.1rem, 2vw, 1.28rem); }
+	.hero-detail { max-width: 39rem; color: var(--text); font-size: 1rem; }
+	.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+	.button { display: inline-flex; justify-content: center; align-items: center; min-height: 2.9rem; padding: 0.65rem 1.1rem; border: 1px solid var(--accent); border-radius: 0.5rem; font-weight: 750; text-decoration: none; transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease; }
+	.button:hover { transform: translateY(-2px); text-decoration: none; }
+	.button-primary { background: var(--accent); color: #fff; box-shadow: 0 9px 22px rgba(37, 99, 235, 0.24); }
+	.button-primary:hover { background: var(--accent-dark); color: #fff; }
+	.button-secondary { color: var(--accent-dark); }
+	.button-secondary:hover { background: var(--accent-soft); color: var(--accent-dark); }
+	.hero-social { display: flex; gap: 1rem; margin-top: 1.35rem; }
+	.hero-social a { color: var(--text); font-size: 0.9rem; font-weight: 700; text-decoration: none; }
+	.hero-social a:hover { color: var(--accent-dark); }
+	.hero-photo-wrap { position: relative; justify-self: end; width: min(100%, 370px); }
+	.location-badge { position: absolute; top: 1rem; left: 1rem; z-index: 2; margin: 0; padding: 0.45rem 0.75rem; border: 1px solid rgba(255, 255, 255, 0.72); border-radius: 999px; background: rgba(255, 255, 255, 0.82); color: var(--color-heading); box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14); backdrop-filter: blur(12px); font-size: 0.78rem; font-weight: 750; }
+	.profile-img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 1.25rem; }
+	@media (max-width: 760px) { .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 3rem; } .hero-photo-wrap { justify-self: start; width: min(78%, 330px); order: -1; } .hero h1 { max-width: 15ch; } }
 </style>

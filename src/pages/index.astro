@@ -1,93 +1,103 @@
----
+﻿---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, LINKEDIN_URL } from '../consts';
+import { GITHUB_URL, LINKEDIN_URL, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
+	<head><BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /></head>
 	<body>
 		<Header />
 		<main class="home">
 			<Hero />
 
-			<p class="reveal">
-				Soy Ingeniera en Ciencias Informáticas con cerca de 3 años de experiencia asegurando la calidad del software. Creo firmemente que un buen QA no solo identifica defectos, sino que ayuda a prevenirlos entendiendo a fondo el negocio y colaborando estrechamente con todo el equipo.
-			</p>
+			<section id="experiencia" class="section" aria-labelledby="experiencia-title">
+				<p class="section-kicker">Experiencia</p>
+				<h2 id="experiencia-title">Calidad conectada con el proceso y el negocio.</h2>
+				<p class="section-intro">Trabajo de forma colaborativa durante el ciclo completo de desarrollo: entendiendo el problema, haciendo visible el riesgo y validando que la soluci&oacute;n responda a las necesidades reales.</p>
+				<div class="experience-list">
+					<article class="experience-card">
+						<div class="experience-heading"><div><p class="card-label">GSI General Software Inc.</p><h3>QA Analyst / Software Analyst</h3></div><span>Agosto 2023 — Abril 2026</span></div>
+						<p>Particip&eacute; en proyectos de Business Intelligence y sistemas corporativos, conectando requisitos, validaciones y comunicaci&oacute;n con equipos, clientes y &aacute;reas de negocio.</p>
+						<div class="project-grid">
+							<section><h4>InfoTur</h4><p>Plataforma con procesos de ingesta de datos, dashboards y gr&aacute;ficos para consulta y an&aacute;lisis de informaci&oacute;n.</p><ul><li>Elaboraci&oacute;n de documentaci&oacute;n funcional, planes y casos de prueba.</li><li>Validaci&oacute;n de ingesta y consistencia visual de dashboards frente a fuentes de Excel.</li><li>Coordinaci&oacute;n y seguimiento de entregables en din&aacute;micas Scrum.</li></ul></section>
+							<section><h4>BlueDiamond</h4><p>Soluci&oacute;n orientada al an&aacute;lisis de sentimiento y la visualizaci&oacute;n de resultados en dashboards.</p><ul><li>Refinamiento de requisitos y detecci&oacute;n temprana de inconsistencias en reglas de negocio.</li><li>Validaci&oacute;n de datos con SQL y dise&ntilde;o de casos funcionales y end-to-end.</li><li>Revisi&oacute;n de la experiencia visual y funcional de los tableros.</li></ul></section>
+							<section><h4>Habana Club Internacional</h4><p>Sistema corporativo con flujos de negocio, APIs REST y datos que requer&iacute;an cobertura antes de las liberaciones.</p><ul><li>Dise&ntilde;o de pruebas funcionales, de regresi&oacute;n y end-to-end.</li><li>Validaci&oacute;n de APIs con Postman y de datos en base de datos mediante SQL.</li><li>Registro y seguimiento de defectos en Jira, documentaci&oacute;n y reportes de cobertura.</li></ul></section>
+						</div>
+						<p class="experience-note">En estos proyectos aport&eacute; an&aacute;lisis de requisitos, reglas de negocio, casos de prueba, testing funcional, validaci&oacute;n de datos, trazabilidad de defectos y colaboraci&oacute;n continua bajo Scrum a lo largo del SDLC.</p>
+					</article>
+					<article class="experience-card">
+						<div class="experience-heading"><div><p class="card-label">Centro Nacional de Biopreparados · BioCen</p><h3>Pr&aacute;ctica universitaria · An&aacute;lisis funcional y QA</h3></div><span>2023 — 2024</span></div>
+						<p>Durante mi formaci&oacute;n en Ingenier&iacute;a en Ciencias Inform&aacute;ticas particip&eacute; en una pr&aacute;ctica universitaria vinculada al an&aacute;lisis y validaci&oacute;n de una aplicaci&oacute;n web para la gesti&oacute;n de solicitudes de servicios de TI.</p>
+						<ul class="two-column-list"><li>Levantamiento y an&aacute;lisis de requisitos con usuarios del negocio.</li><li>Definici&oacute;n funcional de pantallas, flujos y reglas del sistema.</li><li>Participaci&oacute;n en el desarrollo de la aplicaci&oacute;n web.</li><li>Pruebas funcionales y validaci&oacute;n integral del sistema.</li><li>Documentaci&oacute;n de requisitos, dise&ntilde;o y resultados de prueba.</li><li>Trabajo en equipo durante las distintas etapas del proyecto.</li></ul>
+					</article>
+				</div>
+			</section>
 
-			<h2 class="reveal"> Sobre mí</h2>
-			<ul class="reveal">
-				<li><strong>Encuentro lo que otros pasan por alto:</strong> Valido consistencia de datos con SQL directo contra base de datos y detecto inconsistencias en los requerimientos antes de que se conviertan en un defecto en producción.</li>
-				<li><strong>De manual a automatizado:</strong> Diseño y ejecuto pruebas funcionales, E2E y de regresión; hoy estoy escalando ese proceso con Playwright y TypeScript.</li>
-				<li><strong>QA que entiende el negocio, no solo el código:</strong> Facilito ceremonias ágiles, coordino equipos Scrum y traduzco entre negocio y desarrollo para que los criterios de aceptación queden claros desde el día uno.</li>
-				<li><strong>Gestiono el defecto, pero mi objetivo es el proceso:</strong> Manejo el ciclo de vida completo de bugs en Jira, con la mira puesta en reducir cuántos llegan a producción, no solo en reportarlos.</li>
-			</ul>
+			<section id="portafolio" class="section" aria-labelledby="portafolio-title">
+				<p class="section-kicker">Portafolio</p><h2 id="portafolio-title">Evidencias pr&aacute;cticas de mi trabajo en QA</h2>
+				<div class="portfolio-grid">
+					<article class="portfolio-card"><h3>An&aacute;lisis Funcional y Documentaci&oacute;n</h3><p>Transformo necesidades del negocio en documentaci&oacute;n clara y estructurada para facilitar el desarrollo, las pruebas y la trazabilidad de los requerimientos.</p><div class="portfolio-evidence"><span>Evidencias</span><a href="https://github.com/Liliannis/qa-functional-specifications/tree/main/historias-de-usuarios" target="_blank" rel="noopener noreferrer" aria-label="Ver Historias de Usuario en GitHub">Historias de Usuario &#8599;</a><a href="https://github.com/Liliannis/qa-functional-specifications/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Ver README del proyecto en GitHub">README del proyecto &#8599;</a><a href="https://github.com/Liliannis/qa-functional-specifications/blob/main/Matriz-de-trazabilidad.xlsx" target="_blank" rel="noopener noreferrer" aria-label="Ver Matriz de Trazabilidad en GitHub">Matriz de Trazabilidad &#8599;</a><a href="https://github.com/Liliannis/qa-functional-specifications" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio completo de documentaci&oacute;n funcional en GitHub">Repositorio completo &#8599;</a></div></article>
+					<article class="portfolio-card"><h3>Pruebas Funcionales y APIs</h3><p>Dise&ntilde;o y ejecuto pruebas funcionales, de regresi&oacute;n, End-to-End y validaciones de APIs para verificar que cada funcionalidad cumpla con los requerimientos definidos.</p><div class="portfolio-evidence"><span>Evidencias</span><a href="https://github.com/Liliannis/qa-functional-specifications/tree/main/casos-de-prueba" target="_blank" rel="noopener noreferrer" aria-label="Ver Casos de Prueba en GitHub">Casos de Prueba &#8599;</a><a href="https://github.com/Liliannis/qa-functional-specifications" target="_blank" rel="noopener noreferrer" aria-label="Ver futuras evidencias de Postman en GitHub">Postman pr&oacute;ximamente &#8599;</a><a href="https://github.com/Liliannis/qa-functional-specifications" target="_blank" rel="noopener noreferrer" aria-label="Ver futuras colecciones en GitHub">Evidencias pr&oacute;ximamente &#8599;</a><a href="https://github.com/Liliannis/qa-functional-specifications/tree/main/casos-de-prueba" target="_blank" rel="noopener noreferrer" aria-label="Ver escenarios Gherkin en GitHub">Gherkin &#8599;</a></div></article>
+					<article class="portfolio-card"><h3>Automatizaci&oacute;n de Pruebas</h3><p>Desarrollo pruebas automatizadas con Playwright y TypeScript para validar flujos cr&iacute;ticos y construir una base de pruebas repetibles, confiables y mantenibles.</p><div class="portfolio-evidence"><span>Evidencias</span><a href="https://github.com/Liliannis/qa-functional-specifications" target="_blank" rel="noopener noreferrer" aria-label="Ver futuros casos automatizados en GitHub">Automatizaci&oacute;n pr&oacute;ximamente &#8599;</a><a href="https://github.com/Liliannis/qa-functional-specifications" target="_blank" rel="noopener noreferrer" aria-label="Ver futura integraci&oacute;n de pruebas en GitHub">Integraci&oacute;n pr&oacute;ximamente &#8599;</a><a href="https://github.com/Liliannis/qa-functional-specifications" target="_blank" rel="noopener noreferrer" aria-label="Ver futura evidencia Playwright en GitHub">Playwright pr&oacute;ximamente &#8599;</a><a href="https://github.com/Liliannis/qa-functional-specifications" target="_blank" rel="noopener noreferrer" aria-label="Ver futuros reportes de automatizaci&oacute;n en GitHub">Reportes pr&oacute;ximamente &#8599;</a></div></article>
+				</div>
+			</section>
 
-			<div class="cta-block reveal">
-				<p class="cta-text">
-					¿Necesitás asegurar la calidad de tu producto antes de que el usuario encuentre los bugs? Hablemos.
-				</p>
-				<a
-					class="cta-button"
-					href={LINKEDIN_URL}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Conectemos en LinkedIn
-				</a>
-			</div>
+			<section id="explorando" class="exploring-section" aria-labelledby="explorando-title">
+				<div><p class="section-kicker">Explorando</p><h2 id="explorando-title">Automatizaci&oacute;n con una base funcional s&oacute;lida.</h2></div>
+				<div><p>Actualmente contin&uacute;o mi desarrollo profesional en automatizaci&oacute;n de pruebas con <strong>Playwright y TypeScript</strong>. Mi objetivo es ampliar la cobertura sin perder de vista los riesgos, reglas de negocio y experiencia de las personas usuarias.</p><a href="/blog" class="text-link">Conocer mi espacio de aprendizaje <span aria-hidden="true">&#8594;</span></a></div>
+			</section>
 
-			<p class="reveal secondary-note">
-				También escribo sobre QA, automatización y metodologías ágiles en mi blog.
-				<a href="/blog">Leé mis últimas publicaciones</a> o
-				<a href="/about">conocé más sobre mi experiencia</a>.
-			</p>
-
+			<section id="contacto" class="contact-section" aria-labelledby="contacto-title">
+				<div><p class="section-kicker">Contacto</p><h2 id="contacto-title">Conversemos sobre calidad, producto y pr&oacute;ximos desaf&iacute;os.</h2><p>Este sitio es est&aacute;tico. Para contactarme directamente, escribime por email o encontrame en LinkedIn y GitHub.</p></div>
+				<div class="contact-actions"><a class="button button-primary" href="mailto:liliquintana001@gmail.com">Escribirme por email</a><a class="button button-secondary" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="button button-secondary" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a></div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
-	main.home {
-		width: 100%;
-		max-width: 960px;
-		box-sizing: border-box;
-	}
-	.cta-block {
-		text-align: center;
-		margin: 2.5rem 0;
-		padding: 2rem 1rem;
-		background: rgb(var(--gray-light));
-		border-radius: 12px;
-	}
-	.cta-text {
-		font-size: 1.3rem;
-		font-weight: 600;
-		color: rgb(var(--black));
-		margin-bottom: 1.25rem;
-	}
-	.cta-button {
-		display: inline-block;
-		padding: 0.7rem 1.6rem;
-		border-radius: 8px;
-		font-weight: 700;
-		text-decoration: none;
-		background-color: var(--accent);
-		color: white;
-		transition: opacity 0.2s ease;
-	}
-	.cta-button:hover {
-		opacity: 0.85;
-		color: white;
-	}
-	.secondary-note {
-		font-size: 0.95rem;
-		color: rgb(var(--gray));
-	}
+	main.home { width: min(1180px, calc(100% - 2rem)); max-width: none; padding: 0; }
+	.section { padding: clamp(4rem, 8vw, 6.75rem) 0; border-top: 1px solid var(--border); scroll-margin-top: 6rem; }
+	.section-kicker, .card-label { margin: 0 0 0.65rem; color: var(--accent); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+	.section h2, .exploring-section h2, .contact-section h2 { max-width: 20ch; font-size: clamp(2.1rem, 4.5vw, 3.6rem); letter-spacing: -0.05em; }
+	.section-intro { max-width: 48rem; margin-top: 1.25rem; color: var(--muted); font-size: 1.08rem; }
+	.experience-list { display: grid; gap: 1.25rem; margin-top: 2.25rem; }
+	.experience-card { padding: clamp(1.4rem, 3vw, 2.2rem); border: 1px solid var(--border); border-radius: 1rem; background: var(--surface); box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08); }
+	.experience-heading { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 1.3rem; }
+	.experience-heading h3 { margin-bottom: 0; font-size: 1.35rem; }
+	.experience-heading span { color: var(--muted); font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+	.project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.4rem; }
+	.project-grid section { padding: 1.15rem; border-radius: 0.7rem; background: var(--surface-soft); }
+	.project-grid h4 { margin-bottom: 0.55rem; color: var(--color-heading); font-size: 1.05rem; }
+	.project-grid p, .project-grid ul { color: var(--text); font-size: 0.9rem; }
+	.project-grid ul, .two-column-list { padding-left: 1.1rem; }
+	.project-grid li { margin-bottom: 0.45rem; }
+	.experience-note { margin: 1.5rem 0 0; color: var(--text); font-size: 0.95rem; }
+	.two-column-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem 2rem; margin: 1.3rem 0 0; }
+	.portfolio-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2.25rem; }
+	.portfolio-card { min-height: 15rem; padding: 1.6rem; border: 1px solid var(--border); border-radius: 0.9rem; background: var(--surface); transition: transform 170ms ease, box-shadow 170ms ease; }
+	.portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 17px 30px rgba(15, 23, 42, 0.12); }
+	.portfolio-card h3 { font-size: 1.2rem; }
+	.portfolio-evidence { display: grid; gap: 0.45rem; margin-top: 1rem; }
+	.portfolio-evidence span { color: var(--accent-dark); font-size: 0.8rem; font-weight: 750; }
+	.portfolio-evidence a { color: var(--accent-dark); font-size: 0.88rem; font-weight: 750; text-decoration: none; }
+	.portfolio-evidence a:hover { text-decoration: underline; }
+	.exploring-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); gap: 3rem; margin: 0 0 2rem; padding: clamp(2rem, 5vw, 3.5rem); border-radius: 1.2rem; background: linear-gradient(120deg, var(--surface-tint), #E0F2FE); scroll-margin-top: 6rem; }
+	.exploring-section h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); }
+	.exploring-section > div:last-child { align-self: end; color: var(--text); }
+	.text-link { color: var(--accent-dark); font-weight: 750; text-decoration: none; }
+	.text-link:hover { color: var(--accent); text-decoration: underline; }
+	.contact-section { display: grid; grid-template-columns: minmax(0, 1.2fr) auto; gap: 2.5rem; align-items: end; margin: 2rem 0 0; padding: clamp(2rem, 5vw, 3.5rem); border-radius: 1.2rem; border: 1px solid var(--border); background: linear-gradient(120deg, var(--surface-soft), var(--surface-tint)); color: var(--text); scroll-margin-top: 6rem; }
+	.contact-section h2 { color: var(--color-heading); }
+	.contact-section p { max-width: 42rem; margin: 1rem 0 0; }
+	.contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; max-width: 19rem; }
+	.contact-section .button-secondary { border-color: #93C5FD; color: var(--color-heading); }
+	.contact-section .button-secondary:hover { background: var(--accent-soft); color: var(--accent-dark); }
+	@media (max-width: 850px) { .project-grid, .portfolio-grid { grid-template-columns: 1fr; } .portfolio-card { min-height: auto; } .contact-section, .exploring-section { grid-template-columns: 1fr; } .contact-actions { max-width: none; } }
+	@media (max-width: 600px) { main.home { width: min(100% - 1.5rem, 1180px); } .experience-heading { display: block; } .experience-heading span { display: block; margin-top: 0.7rem; } .two-column-list { grid-template-columns: 1fr; } }
 </style>

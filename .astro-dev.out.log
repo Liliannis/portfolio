@@ -1,0 +1,7 @@
+
+> portfolio@0.0.1 dev
+> astro dev --host 127.0.0.1
+
+{"message":"Dev server running at http://127.0.0.1:4321 (pid 18592)\n  Stop:   astro dev stop\n  Status: astro dev status\n  Logs:   astro dev logs","label":"SKIP_FORMAT","level":"info"}
+
+C:\Users\Lili\portfolio>
